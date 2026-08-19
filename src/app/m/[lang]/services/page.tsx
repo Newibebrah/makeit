@@ -9,12 +9,6 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
-const colorMap: Record<string, string> = {
-  static: "from-[#6C2BD9] to-[#8B5CF6]",
-  cms: "from-[#8B5CF6] to-[#6C2BD9]",
-  custom: "from-[#FF2D78] to-[#F472B6]",
-};
-
 export default function MobileServicesPage({ params }: { params: { lang: string } }) {
   const lang = params.lang as Lang;
   const dict = getDictionary(lang);
@@ -39,7 +33,7 @@ export default function MobileServicesPage({ params }: { params: { lang: string 
           >
             <div className="flex items-center gap-3">
               <span
-                className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br ${colorMap[service.id]} text-xl`}
+                className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gradient-brand text-xl`}
               >
                 {service.icon}
               </span>

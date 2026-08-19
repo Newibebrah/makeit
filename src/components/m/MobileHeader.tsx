@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import LangSwitcher from "../LangSwitcher";
+import ThemeSwitcher from "../ThemeSwitcher";
 import type { Lang } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/en";
 
@@ -73,6 +74,7 @@ export default function MobileHeader({ lang, dict }: MobileHeaderProps) {
             >
               {dict.nav.getStarted}
             </Link>
+            <ThemeSwitcher label={dict.themeSwitcher.label} />
             <LangSwitcher lang={lang} label={dict.langSwitcher.label} />
             <button
               onClick={() => setOpen(!open)}
@@ -130,8 +132,13 @@ export default function MobileHeader({ lang, dict }: MobileHeaderProps) {
                 </motion.div>
               ))}
             </nav>
-            <div className="mt-8 px-3">
-              <LangSwitcher compact lang={lang} label={dict.langSwitcher.label} />
+            <div className="mt-8 flex flex-wrap items-center gap-3 px-3">
+              <LangSwitcher
+                compact
+                lang={lang}
+                label={dict.langSwitcher.label}
+              />
+              <ThemeSwitcher compact label={dict.themeSwitcher.label} />
             </div>
           </motion.div>
         )}

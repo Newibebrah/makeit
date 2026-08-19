@@ -95,6 +95,11 @@ export default function RootLayout({
         className={`${inter.variable} ${dmSans.variable} antialiased bg-ink text-surface`}
       >
         <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem("makeit-theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}})();`,
+          }}
+        />
+        <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
         />

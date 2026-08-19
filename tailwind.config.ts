@@ -17,16 +17,16 @@ const config: Config = {
           500: "#333333",
         },
         brand: {
-          DEFAULT: "#6C2BD9",
-          400: "#8B5CF6",
-          300: "#A78BFA",
-          500: "#5B21B6",
-          600: "#4C1D95",
+          DEFAULT: "rgb(var(--brand) / <alpha-value>)",
+          400: "rgb(var(--brand-400) / <alpha-value>)",
+          300: "rgb(var(--brand-300) / <alpha-value>)",
+          500: "rgb(var(--brand-500) / <alpha-value>)",
+          600: "rgb(var(--brand-600) / <alpha-value>)",
         },
         accent: {
-          DEFAULT: "#FF2D78",
-          400: "#F472B6",
-          300: "#F9A8D4",
+          DEFAULT: "rgb(var(--accent) / <alpha-value>)",
+          400: "rgb(var(--accent-400) / <alpha-value>)",
+          300: "rgb(var(--accent-300) / <alpha-value>)",
         },
         surface: "#F8FAFC",
       },
@@ -38,17 +38,14 @@ const config: Config = {
         tightest2: "-0.04em",
       },
       boxShadow: {
-        glow: "0 0 40px -10px rgba(108, 43, 217, 0.45)",
-        "glow-pink": "0 0 40px -10px rgba(255, 45, 120, 0.35)",
+        glow: "0 0 40px -10px var(--glow)",
+        "glow-pink": "0 0 40px -10px var(--glow-accent)",
         card: "0 20px 60px -20px rgba(0, 0, 0, 0.45)",
       },
       backgroundImage: {
-        "gradient-brand":
-          "linear-gradient(135deg, #6C2BD9 0%, #8B5CF6 50%, #FF2D78 100%)",
-        "gradient-brand-soft":
-          "linear-gradient(135deg, rgba(108, 43, 217, 0.15) 0%, rgba(255, 45, 120, 0.1) 100%)",
-        "gradient-radial":
-          "radial-gradient(ellipse at center, rgba(108, 43, 217, 0.25) 0%, transparent 70%)",
+        "gradient-brand": "var(--gradient-brand)",
+        "gradient-brand-soft": "var(--gradient-brand-soft)",
+        "gradient-radial": "var(--gradient-radial)",
       },
       borderRadius: {
         "4xl": "2rem",

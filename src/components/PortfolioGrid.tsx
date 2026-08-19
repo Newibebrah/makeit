@@ -60,7 +60,7 @@ export default function PortfolioGrid({ dict }: PortfolioGridProps) {
               className="group overflow-hidden rounded-3xl border border-white/10 bg-ink-700/50"
             >
               <div
-                className={`relative aspect-[4/3] overflow-hidden bg-gradient-to-br ${project.gradient}`}
+                className={`relative aspect-[4/3] overflow-hidden ${project.gradient}`}
               >
                 <div className="absolute inset-0 bg-grid opacity-30" />
                 <div className="absolute inset-0 flex items-center justify-center">

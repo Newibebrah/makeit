@@ -19,6 +19,7 @@ const jpn: Dictionary = {
     getStarted: "はじめる",
   },
   langSwitcher: { label: "言語" },
+  themeSwitcher: { label: "テーマ" },
   hero: {
     badge: "プレミアム Web 開発",
     title1: "MakeIt で世界へ",
@@ -122,12 +123,12 @@ const jpn: Dictionary = {
     viewProject: "プロジェクトを見る",
     filters: { all: "すべて", static: "静的", cms: "CMS", custom: "カスタム" },
     projects: [
-      { title: "東京ハーモニー", category: "CMS", tags: ["日本", "コーポレート", "CMS"], description: "東京のホスピタリティグループ向けの二言語コーポレートサイト。", gradient: "from-[#6C2BD9] to-[#8B5CF6]" },
-      { title: "クラマーケット", category: "Custom", tags: ["日本", "Eコマース", "カスタム"], description: "京都の小売店向けのローカル決済統合を備えたフル Eコマースプラットフォーム。", gradient: "from-[#FF2D78] to-[#F472B6]" },
-      { title: "ゼンファイナンス", category: "Static", tags: ["米国", "フィンテック", "静的"], description: "米国のフィンテックスタートアップ向けの高速なコンバージョン重視ランディングページ。", gradient: "from-[#4C1D95] to-[#6C2BD9]" },
-      { title: "さくらトラベル", category: "CMS", tags: ["日本", "旅行", "CMS"], description: "大阪のブティック旅行代理店向けの多言語予約ハブ。", gradient: "from-[#8B5CF6] to-[#FF2D78]" },
-      { title: "ネクサス SaaS", category: "Custom", tags: ["ヨーロッパ", "SaaS", "カスタム"], description: "ベルリンの SaaS 向けのダッシュボードと定期課金を備えた会員ポータル。", gradient: "from-[#111111] to-[#6C2BD9]" },
-      { title: "ハーバーリアルティ", category: "Static", tags: ["日本", "不動産", "静的"], description: "横浜の高級不動産会社向けの洗練された会社案内サイト。", gradient: "from-[#FF2D78] to-[#4C1D95]" },
+      { title: "東京ハーモニー", category: "CMS", tags: ["日本", "コーポレート", "CMS"], description: "東京のホスピタリティグループ向けの二言語コーポレートサイト。", gradient: "gradient-a" },
+      { title: "クラマーケット", category: "Custom", tags: ["日本", "Eコマース", "カスタム"], description: "京都の小売店向けのローカル決済統合を備えたフル Eコマースプラットフォーム。", gradient: "gradient-b" },
+      { title: "ゼンファイナンス", category: "Static", tags: ["米国", "フィンテック", "静的"], description: "米国のフィンテックスタートアップ向けの高速なコンバージョン重視ランディングページ。", gradient: "gradient-c" },
+      { title: "さくらトラベル", category: "CMS", tags: ["日本", "旅行", "CMS"], description: "大阪のブティック旅行代理店向けの多言語予約ハブ。", gradient: "gradient-d" },
+      { title: "ネクサス SaaS", category: "Custom", tags: ["ヨーロッパ", "SaaS", "カスタム"], description: "ベルリンの SaaS 向けのダッシュボードと定期課金を備えた会員ポータル。", gradient: "gradient-e" },
+      { title: "ハーバーリアルティ", category: "Static", tags: ["日本", "不動産", "静的"], description: "横浜の高級不動産会社向けの洗練された会社案内サイト。", gradient: "gradient-f" },
     ],
   },
   testimonials: {

@@ -19,6 +19,7 @@ const id: Dictionary = {
     getStarted: "Mulai Sekarang",
   },
   langSwitcher: { label: "Bahasa" },
+  themeSwitcher: { label: "Tema" },
   hero: {
     badge: "Pengembangan Web Premium",
     title1: "Bangun Kehadiran Global",
@@ -122,12 +123,12 @@ const id: Dictionary = {
     viewProject: "Lihat Proyek",
     filters: { all: "Semua", static: "Statis", cms: "CMS", custom: "Kustom" },
     projects: [
-      { title: "Tokyo Harmony", category: "CMS", tags: ["Jepang", "Korporat", "CMS"], description: "Website korporat dwibahasa untuk grup perhotelan di Tokyo.", gradient: "from-[#6C2BD9] to-[#8B5CF6]" },
-      { title: "Kura Market", category: "Custom", tags: ["Jepang", "E-commerce", "Kustom"], description: "Platform e-commerce lengkap dengan integrasi pembayaran lokal untuk ritel Kyoto.", gradient: "from-[#FF2D78] to-[#F472B6]" },
-      { title: "Zen Finance", category: "Static", tags: ["AS", "Fintech", "Statis"], description: "Landing page cepat berfokus konversi untuk startup fintech AS.", gradient: "from-[#4C1D95] to-[#6C2BD9]" },
-      { title: "Sakura Travels", category: "CMS", tags: ["Jepang", "Wisata", "CMS"], description: "Pusat pemesanan multi-bahasa untuk agen perjalanan butik di Osaka.", gradient: "from-[#8B5CF6] to-[#FF2D78]" },
-      { title: "Nexus SaaS", category: "Custom", tags: ["Eropa", "SaaS", "Kustom"], description: "Portal member dengan dashboard dan tagihan berlangganan untuk SaaS di Berlin.", gradient: "from-[#111111] to-[#6C2BD9]" },
-      { title: "Harbor Realty", category: "Static", tags: ["Jepang", "Properti", "Statis"], description: "Company profile elegan untuk firma properti mewah di Yokohama.", gradient: "from-[#FF2D78] to-[#4C1D95]" },
+      { title: "Tokyo Harmony", category: "CMS", tags: ["Jepang", "Korporat", "CMS"], description: "Website korporat dwibahasa untuk grup perhotelan di Tokyo.", gradient: "gradient-a" },
+      { title: "Kura Market", category: "Custom", tags: ["Jepang", "E-commerce", "Kustom"], description: "Platform e-commerce lengkap dengan integrasi pembayaran lokal untuk ritel Kyoto.", gradient: "gradient-b" },
+      { title: "Zen Finance", category: "Static", tags: ["AS", "Fintech", "Statis"], description: "Landing page cepat berfokus konversi untuk startup fintech AS.", gradient: "gradient-c" },
+      { title: "Sakura Travels", category: "CMS", tags: ["Jepang", "Wisata", "CMS"], description: "Pusat pemesanan multi-bahasa untuk agen perjalanan butik di Osaka.", gradient: "gradient-d" },
+      { title: "Nexus SaaS", category: "Custom", tags: ["Eropa", "SaaS", "Kustom"], description: "Portal member dengan dashboard dan tagihan berlangganan untuk SaaS di Berlin.", gradient: "gradient-e" },
+      { title: "Harbor Realty", category: "Static", tags: ["Jepang", "Properti", "Statis"], description: "Company profile elegan untuk firma properti mewah di Yokohama.", gradient: "gradient-f" },
     ],
   },
   testimonials: {

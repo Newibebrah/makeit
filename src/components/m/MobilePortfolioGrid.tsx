@@ -49,7 +49,7 @@ export default function MobilePortfolioGrid({ dict }: { dict: Dictionary }) {
             className="overflow-hidden rounded-2xl border border-white/10 bg-ink-700/40"
           >
             <div
-              className={`relative aspect-[4/3] bg-gradient-to-br ${project.gradient}`}
+              className={`relative aspect-[4/3] ${project.gradient}`}
             >
               <div className="absolute inset-0 bg-grid opacity-30" />
               <span className="absolute inset-0 flex items-center justify-center font-display text-2xl font-bold text-white/25">

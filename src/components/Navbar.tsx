@@ -7,6 +7,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import Logo from "./Logo";
 import Button from "./Button";
 import LangSwitcher from "./LangSwitcher";
+import ThemeSwitcher from "./ThemeSwitcher";
 import type { Lang } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/en";
 
@@ -81,6 +82,7 @@ export default function Navbar({ lang, dict }: NavbarProps) {
           </div>
 
           <div className="hidden items-center gap-3 lg:flex">
+            <ThemeSwitcher label={dict.themeSwitcher.label} />
             <LangSwitcher lang={lang} label={dict.langSwitcher.label} />
             <Button href={`/${lang}/contact`} size="md">
               {dict.nav.getStarted}
@@ -183,7 +185,14 @@ export default function Navbar({ lang, dict }: NavbarProps) {
                     />
                   </svg>
                 </Button>
-                <LangSwitcher compact lang={lang} label={dict.langSwitcher.label} />
+                <div className="flex flex-wrap items-center gap-3">
+                  <LangSwitcher
+                    compact
+                    lang={lang}
+                    label={dict.langSwitcher.label}
+                  />
+                  <ThemeSwitcher compact label={dict.themeSwitcher.label} />
+                </div>
               </motion.div>
             </nav>
           </motion.div>

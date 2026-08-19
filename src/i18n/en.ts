@@ -17,6 +17,7 @@ const en = {
     getStarted: "Get Started",
   },
   langSwitcher: { label: "Language" },
+  themeSwitcher: { label: "Theme" },
   hero: {
     badge: "Premium Web Development",
     title1: "Build Your Global Presence",
@@ -120,12 +121,12 @@ const en = {
     viewProject: "View Project",
     filters: { all: "All", static: "Static", cms: "CMS", custom: "Custom" },
     projects: [
-      { title: "Tokyo Harmony", category: "CMS", tags: ["Japan", "Corporate", "CMS"], description: "A bilingual corporate website for a Tokyo hospitality group.", gradient: "from-[#6C2BD9] to-[#8B5CF6]" },
-      { title: "Kura Market", category: "Custom", tags: ["Japan", "E-commerce", "Custom"], description: "A full e-commerce platform with local payment integration for a Kyoto retailer.", gradient: "from-[#FF2D78] to-[#F472B6]" },
-      { title: "Zen Finance", category: "Static", tags: ["US", "Fintech", "Static"], description: "A fast, conversion-focused landing page for a US fintech startup.", gradient: "from-[#4C1D95] to-[#6C2BD9]" },
-      { title: "Sakura Travels", category: "CMS", tags: ["Japan", "Travel", "CMS"], description: "A multi-language booking hub for a boutique travel agency in Osaka.", gradient: "from-[#8B5CF6] to-[#FF2D78]" },
-      { title: "Nexus SaaS", category: "Custom", tags: ["Europe", "SaaS", "Custom"], description: "A member portal with dashboards and subscription billing for a Berlin SaaS.", gradient: "from-[#111111] to-[#6C2BD9]" },
-      { title: "Harbor Realty", category: "Static", tags: ["Japan", "Real Estate", "Static"], description: "An elegant company profile for a luxury property firm in Yokohama.", gradient: "from-[#FF2D78] to-[#4C1D95]" },
+      { title: "Tokyo Harmony", category: "CMS", tags: ["Japan", "Corporate", "CMS"], description: "A bilingual corporate website for a Tokyo hospitality group.", gradient: "gradient-a" },
+      { title: "Kura Market", category: "Custom", tags: ["Japan", "E-commerce", "Custom"], description: "A full e-commerce platform with local payment integration for a Kyoto retailer.", gradient: "gradient-b" },
+      { title: "Zen Finance", category: "Static", tags: ["US", "Fintech", "Static"], description: "A fast, conversion-focused landing page for a US fintech startup.", gradient: "gradient-c" },
+      { title: "Sakura Travels", category: "CMS", tags: ["Japan", "Travel", "CMS"], description: "A multi-language booking hub for a boutique travel agency in Osaka.", gradient: "gradient-d" },
+      { title: "Nexus SaaS", category: "Custom", tags: ["Europe", "SaaS", "Custom"], description: "A member portal with dashboards and subscription billing for a Berlin SaaS.", gradient: "gradient-e" },
+      { title: "Harbor Realty", category: "Static", tags: ["Japan", "Real Estate", "Static"], description: "An elegant company profile for a luxury property firm in Yokohama.", gradient: "gradient-f" },
     ],
   },
   testimonials: {

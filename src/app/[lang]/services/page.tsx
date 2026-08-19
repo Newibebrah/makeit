@@ -22,12 +22,6 @@ export function generateMetadata({ params }: { params: { lang: string } }): Meta
   };
 }
 
-const colorMap: Record<string, string> = {
-  static: "from-[#6C2BD9] to-[#8B5CF6]",
-  cms: "from-[#8B5CF6] to-[#6C2BD9]",
-  custom: "from-[#FF2D78] to-[#F472B6]",
-};
-
 export default function ServicesPage({ params }: { params: { lang: string } }) {
   const lang = params.lang as Lang;
   const dict = getDictionary(lang);
@@ -61,7 +55,7 @@ export default function ServicesPage({ params }: { params: { lang: string } }) {
               <article className="group grid gap-8 rounded-[2rem] border border-white/10 bg-ink-700/40 p-8 transition-all duration-300 hover:border-brand-400/40 hover:shadow-glow sm:p-10 lg:grid-cols-[1fr_1.2fr] lg:p-14">
                 <div>
                   <div
-                    className={`flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br ${colorMap[service.id]} text-3xl`}
+                    className={`flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-brand text-3xl`}
                     aria-hidden="true"
                   >
                     {service.icon}
