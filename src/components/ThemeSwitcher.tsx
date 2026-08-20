@@ -16,6 +16,8 @@ const themes: Theme[] = [
   { id: "amber", name: "Amber", color: "#FBBF24" },
   { id: "cyan", name: "Cyan", color: "#22D3EE" },
   { id: "pink", name: "Pink", color: "#F472B6" },
+  { id: "light", name: "Light", color: "#F8FAFC" },
+  { id: "day", name: "Day", color: "#F59E0B" },
 ];
 
 type ThemeSwitcherProps = {
@@ -61,7 +63,13 @@ export default function ThemeSwitcher({
             className={`flex h-8 w-8 items-center justify-center rounded-full border transition-transform hover:scale-110 ${
               t.id === theme ? "border-white" : "border-transparent"
             }`}
-            style={{ backgroundColor: t.color }}
+            style={{
+              backgroundColor: t.color,
+              boxShadow:
+                t.id === "light"
+                  ? "inset 0 0 0 1px rgba(15,23,42,0.25)"
+                  : undefined,
+            }}
           >
             {t.id === theme && (
               <svg
@@ -98,7 +106,13 @@ export default function ThemeSwitcher({
         <span
           aria-hidden="true"
           className="h-3.5 w-3.5 rounded-full ring-1 ring-white/20"
-          style={{ backgroundColor: current.color }}
+          style={{
+            backgroundColor: current.color,
+            boxShadow:
+              current.id === "light"
+                ? "inset 0 0 0 1px rgba(15,23,42,0.25)"
+                : undefined,
+          }}
         />
         <span className="hidden xl:inline">{current.name}</span>
         <svg
@@ -135,7 +149,13 @@ export default function ThemeSwitcher({
                 className={`flex h-10 w-full items-center justify-center rounded-full border-2 transition-transform hover:scale-110 ${
                   t.id === theme ? "border-white" : "border-transparent"
                 }`}
-                style={{ backgroundColor: t.color }}
+                style={{
+                  backgroundColor: t.color,
+                  boxShadow:
+                    t.id === "light"
+                      ? "inset 0 0 0 1px rgba(15,23,42,0.25)"
+                      : undefined,
+                }}
               >
                 {t.id === theme && (
                   <svg

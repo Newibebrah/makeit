@@ -158,7 +158,7 @@ export default function MobileHomePage({ params }: { params: { lang: string } })
               href={`${base}/portfolio`}
               className="w-[220px] shrink-0 overflow-hidden rounded-2xl border border-white/10 bg-ink-700/40"
             >
-              <div className={`relative aspect-[16/10] bg-gradient-to-br ${project.gradient}`}>
+              <div className={`relative aspect-[16/10] ${project.gradient}`}>
                 <div className="absolute inset-0 bg-grid opacity-30" />
                 <span className="absolute inset-0 flex items-center justify-center font-display text-3xl font-bold text-white/25">
                   {project.title[0]}

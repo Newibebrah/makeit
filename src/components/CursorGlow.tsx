@@ -6,10 +6,7 @@ export default function CursorGlow() {
     >
       <div
         className="orb-ambient absolute h-[600px] w-[600px] rounded-full mix-blend-screen"
-        style={{
-          background:
-            "radial-gradient(circle, rgba(108,43,217,0.10) 0%, rgba(255,45,120,0.06) 40%, transparent 70%)",
-        }}
+        style={{ background: "var(--cursor-glow)" }}
       />
     </div>
   );

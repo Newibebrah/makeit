@@ -282,7 +282,7 @@ export default function HomePage({ params }: { params: { lang: string } }) {
                     href={`/${lang}/portfolio`}
                     className="group block overflow-hidden rounded-3xl border border-white/10 bg-ink-700/50"
                   >
-                    <div className={`relative aspect-[4/3] overflow-hidden bg-gradient-to-br ${project.gradient}`}>
+                    <div className={`relative aspect-[4/3] overflow-hidden ${project.gradient}`}>
                       <div className="absolute inset-0 bg-grid opacity-30" />
                       <div className="absolute inset-0 flex items-center justify-center">
                         <span className="text-5xl font-display font-bold text-white/25 transition-all duration-500 group-hover:scale-125">

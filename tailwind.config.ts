@@ -10,11 +10,11 @@ const config: Config = {
     extend: {
       colors: {
         ink: {
-          DEFAULT: "#0A0A0A",
-          800: "#111111",
-          700: "#1A1A1A",
-          600: "#242424",
-          500: "#333333",
+          DEFAULT: "rgb(var(--ink) / <alpha-value>)",
+          800: "rgb(var(--ink-800) / <alpha-value>)",
+          700: "rgb(var(--ink-700) / <alpha-value>)",
+          600: "rgb(var(--ink-600) / <alpha-value>)",
+          500: "rgb(var(--ink-500) / <alpha-value>)",
         },
         brand: {
           DEFAULT: "rgb(var(--brand) / <alpha-value>)",
@@ -28,7 +28,7 @@ const config: Config = {
           400: "rgb(var(--accent-400) / <alpha-value>)",
           300: "rgb(var(--accent-300) / <alpha-value>)",
         },
-        surface: "#F8FAFC",
+        surface: "rgb(var(--surface) / <alpha-value>)",
       },
       fontFamily: {
         sans: ["var(--font-dm-sans)", "ui-sans-serif", "system-ui", "sans-serif"],
@@ -40,7 +40,7 @@ const config: Config = {
       boxShadow: {
         glow: "0 0 40px -10px var(--glow)",
         "glow-pink": "0 0 40px -10px var(--glow-accent)",
-        card: "0 20px 60px -20px rgba(0, 0, 0, 0.45)",
+        card: "var(--shadow-card)",
       },
       backgroundImage: {
         "gradient-brand": "var(--gradient-brand)",
