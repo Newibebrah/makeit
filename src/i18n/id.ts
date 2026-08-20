@@ -19,7 +19,7 @@ const id: Dictionary = {
     getStarted: "Mulai Sekarang",
   },
   langSwitcher: { label: "Bahasa" },
-  themeSwitcher: { label: "Tema" },
+  themeSwitcher: { label: "Tema", dark: "Gelap", light: "Terang" },
   hero: {
     badge: "Pengembangan Web Premium",
     title1: "Bangun Kehadiran Global",

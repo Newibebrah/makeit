@@ -96,7 +96,7 @@ export default function RootLayout({
       >
         <script
           dangerouslySetInnerHTML={{
-            __html: `(function(){try{var t=localStorage.getItem("makeit-theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}})();`,
+            __html: `(function(){try{var c=localStorage.getItem("makeit-color")||localStorage.getItem("makeit-theme")||"purple";if(c==="light"||c==="day"){c="purple";}var m=localStorage.getItem("makeit-mode")||"dark";document.documentElement.setAttribute("data-theme",c);document.documentElement.setAttribute("data-mode",m);}catch(e){}})();`,
           }}
         />
         <script

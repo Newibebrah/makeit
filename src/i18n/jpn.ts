@@ -19,7 +19,7 @@ const jpn: Dictionary = {
     getStarted: "はじめる",
   },
   langSwitcher: { label: "言語" },
-  themeSwitcher: { label: "テーマ" },
+  themeSwitcher: { label: "テーマ", dark: "ダーク", light: "ライト" },
   hero: {
     badge: "プレミアム Web 開発",
     title1: "MakeIt で世界へ",

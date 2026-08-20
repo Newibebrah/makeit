@@ -82,7 +82,11 @@ export default function Navbar({ lang, dict }: NavbarProps) {
           </div>
 
           <div className="hidden items-center gap-3 lg:flex">
-            <ThemeSwitcher label={dict.themeSwitcher.label} />
+            <ThemeSwitcher
+              label={dict.themeSwitcher.label}
+              darkLabel={dict.themeSwitcher.dark}
+              lightLabel={dict.themeSwitcher.light}
+            />
             <LangSwitcher lang={lang} label={dict.langSwitcher.label} />
             <Button href={`/${lang}/contact`} size="md">
               {dict.nav.getStarted}
@@ -191,7 +195,12 @@ export default function Navbar({ lang, dict }: NavbarProps) {
                     lang={lang}
                     label={dict.langSwitcher.label}
                   />
-                  <ThemeSwitcher compact label={dict.themeSwitcher.label} />
+                  <ThemeSwitcher
+                    compact
+                    label={dict.themeSwitcher.label}
+                    darkLabel={dict.themeSwitcher.dark}
+                    lightLabel={dict.themeSwitcher.light}
+                  />
                 </div>
               </motion.div>
             </nav>

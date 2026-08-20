@@ -22,8 +22,8 @@
   --scrollbar-thumb: #2a2a2a;
   --cursor-glow: radial-gradient(
     circle,
-    rgba(108, 43, 217, 0.1) 0%,
-    rgba(255, 45, 120, 0.06) 40%,
+    rgb(var(--brand) / 0.1) 0%,
+    rgb(var(--accent) / 0.06) 40%,
     transparent 70%
   );
 
@@ -250,7 +250,7 @@
   );
 }
 
-[data-theme="light"] {
+[data-mode="light"] {
   --background: #ffffff;
   --foreground: #0f172a;
 
@@ -270,121 +270,54 @@
   --scrollbar-thumb: #cbd5e1;
   --cursor-glow: radial-gradient(
     circle,
-    rgba(139, 92, 246, 0.14) 0%,
-    rgba(244, 114, 182, 0.1) 40%,
+    rgb(var(--brand) / 0.14) 0%,
+    rgb(var(--accent) / 0.1) 40%,
     transparent 70%
   );
 }
 
-[data-theme="day"] {
-  --background: #fffaf0;
-  --foreground: #431407;
-
-  --ink: 255 251 235;
-  --ink-800: 255 247 221;
-  --ink-700: 254 243 199;
-  --ink-600: 251 232 175;
-  --ink-500: 246 221 150;
-
-  --surface: 69 26 3;
-
-  --brand: 234 88 12;
-  --brand-300: 253 186 116;
-  --brand-400: 251 146 60;
-  --brand-500: 194 65 12;
-  --brand-600: 154 52 18;
-
-  --accent: 14 165 233;
-  --accent-300: 125 211 252;
-  --accent-400: 56 189 248;
-
-  --glow: rgba(234, 88, 12, 0.4);
-  --glow-accent: rgba(14, 165, 233, 0.4);
-
-  --gradient-brand: linear-gradient(
-    135deg,
-    #ea580c 0%,
-    #fb923c 50%,
-    #0ea5e9 100%
-  );
-  --gradient-brand-soft: linear-gradient(
-    135deg,
-    rgba(234, 88, 12, 0.14) 0%,
-    rgba(14, 165, 233, 0.1) 100%
-  );
-  --gradient-radial: radial-gradient(
-    ellipse at center,
-    rgba(234, 88, 12, 0.22) 0%,
-    transparent 70%
-  );
-
-  --glass: rgba(255, 251, 235, 0.75);
-  --grid-line: rgba(69, 26, 3, 0.06);
-  --shadow-card: 0 20px 60px -20px rgba(69, 26, 3, 0.2);
-  --card-fill: #fffaf0;
-  --scrollbar-track: #fef3c7;
-  --scrollbar-thumb: #d9b05e;
-  --cursor-glow: radial-gradient(
-    circle,
-    rgba(234, 88, 12, 0.16) 0%,
-    rgba(14, 165, 233, 0.1) 40%,
-    transparent 70%
-  );
-}
-
-[data-theme="light"] .orb-ambient,
-[data-theme="day"] .orb-ambient {
+[data-mode="light"] .orb-ambient {
   mix-blend-mode: multiply;
 }
 
-[data-theme="light"] .text-white,
-[data-theme="day"] .text-white {
+[data-mode="light"] .text-white {
   color: rgb(var(--surface));
 }
 
-[data-theme="light"] .text-white\/25,
-[data-theme="day"] .text-white\/25 {
+[data-mode="light"] .text-white\/25 {
   color: rgb(var(--surface) / 0.25);
 }
 
-[data-theme="light"] .bg-white\/5,
-[data-theme="day"] .bg-white\/5 {
+[data-mode="light"] .bg-white\/5 {
   background-color: rgb(var(--surface) / 0.05);
 }
 
-[data-theme="light"] .bg-white\/10,
-[data-theme="day"] .bg-white\/10 {
+[data-mode="light"] .bg-white\/10 {
   background-color: rgb(var(--surface) / 0.1);
 }
 
-[data-theme="light"] .border-white\/5,
-[data-theme="day"] .border-white\/5 {
+[data-mode="light"] .border-white\/5 {
   border-color: rgb(var(--surface) / 0.06);
 }
 
-[data-theme="light"] .border-white\/10,
-[data-theme="day"] .border-white\/10 {
+[data-mode="light"] .border-white\/10 {
   border-color: rgb(var(--surface) / 0.1);
 }
 
-[data-theme="light"] .border-white\/15,
-[data-theme="day"] .border-white\/15 {
+[data-mode="light"] .border-white\/15 {
   border-color: rgb(var(--surface) / 0.15);
 }
 
-[data-theme="light"] .border-white\/20,
-[data-theme="day"] .border-white\/20 {
+[data-mode="light"] .border-white\/20 {
   border-color: rgb(var(--surface) / 0.2);
 }
 
-[data-theme="light"] .bg-gradient-brand.text-white,
-[data-theme="day"] .bg-gradient-brand.text-white,
-[data-theme="light"] .bg-accent.text-white,
-[data-theme="day"] .bg-accent.text-white {
+[data-mode="light"] .bg-gradient-brand.text-white,
+[data-mode="light"] .bg-accent.text-white {
   color: #fff;
 }
 
-[data-theme="light"]
+[data-mode="light"]
   :is(
     .bg-gradient-brand,
     .bg-accent,
@@ -399,37 +332,7 @@
   color: #fff;
 }
 
-[data-theme="day"]
-  :is(
-    .bg-gradient-brand,
-    .bg-accent,
-    .gradient-a,
-    .gradient-b,
-    .gradient-c,
-    .gradient-d,
-    .gradient-e,
-    .gradient-f
-  )
-  :is(.text-white, .text-white\/25) {
-  color: #fff;
-}
-
-[data-theme="light"]
-  :is(
-    .bg-gradient-brand,
-    .bg-accent,
-    .gradient-a,
-    .gradient-b,
-    .gradient-c,
-    .gradient-d,
-    .gradient-e,
-    .gradient-f
-  )
-  :is(.bg-white\/10) {
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
-[data-theme="day"]
+[data-mode="light"]
   :is(
     .bg-gradient-brand,
     .bg-accent,

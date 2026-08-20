@@ -2,13 +2,13 @@
 
 import { useEffect, useState } from "react";
 
-type Theme = {
+type ThemeColor = {
   id: string;
   name: string;
   color: string;
 };
 
-const themes: Theme[] = [
+const colors: ThemeColor[] = [
   { id: "purple", name: "Purple", color: "#8B5CF6" },
   { id: "blue", name: "Blue", color: "#60A5FA" },
   { id: "emerald", name: "Emerald", color: "#34D399" },
@@ -16,62 +16,77 @@ const themes: Theme[] = [
   { id: "amber", name: "Amber", color: "#FBBF24" },
   { id: "cyan", name: "Cyan", color: "#22D3EE" },
   { id: "pink", name: "Pink", color: "#F472B6" },
-  { id: "light", name: "Light", color: "#F8FAFC" },
-  { id: "day", name: "Day", color: "#F59E0B" },
 ];
 
 type ThemeSwitcherProps = {
   label: string;
+  darkLabel: string;
+  lightLabel: string;
   compact?: boolean;
 };
 
 export default function ThemeSwitcher({
   label,
+  darkLabel,
+  lightLabel,
   compact = false,
 }: ThemeSwitcherProps) {
-  const [theme, setTheme] = useState("purple");
+  const [color, setColor] = useState("purple");
+  const [mode, setMode] = useState<"dark" | "light">("dark");
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    setTheme(document.documentElement.dataset.theme || "purple");
+    const root = document.documentElement;
+    const c = root.dataset.theme || "purple";
+    const m = root.dataset.mode === "light" ? "light" : "dark";
+    if (colors.some((t) => t.id === c)) setColor(c);
+    setMode(m);
   }, []);
 
-  const apply = (id: string) => {
-    setTheme(id);
-    document.documentElement.dataset.theme = id;
+  const apply = (nextColor: string, nextMode: "dark" | "light") => {
+    setColor(nextColor);
+    setMode(nextMode);
+    const root = document.documentElement;
+    root.dataset.theme = nextColor;
+    root.dataset.mode = nextMode;
     try {
-      localStorage.setItem("makeit-theme", id);
+      localStorage.setItem("makeit-color", nextColor);
+      localStorage.setItem("makeit-mode", nextMode);
     } catch {
       // ignore storage errors (e.g. private mode)
     }
     setOpen(false);
   };
 
-  const current = themes.find((t) => t.id === theme) ?? themes[0];
+  const current = colors.find((t) => t.id === color) ?? colors[0];
 
-  if (compact) {
-    return (
-      <div className="flex flex-wrap items-center gap-1.5" role="group" aria-label={label}>
-        {themes.map((t) => (
+  const swatchClass = (isActive: boolean, isLight: boolean) =>
+    `flex h-8 w-8 items-center justify-center rounded-full border transition-transform hover:scale-110 ${
+      isActive
+        ? isLight
+          ? "border-ink-800"
+          : "border-white"
+        : "border-transparent"
+    }`;
+
+  const modeRow = (m: "dark" | "light", sectionLabel: string) => (
+    <div>
+      <p className="px-4 pb-1.5 pt-2 text-[11px] font-semibold uppercase tracking-wider text-surface/50">
+        {sectionLabel}
+      </p>
+      <div className="flex flex-wrap gap-1.5 px-4 pb-3">
+        {colors.map((t) => (
           <button
-            key={t.id}
+            key={`${m}-${t.id}`}
             type="button"
-            onClick={() => apply(t.id)}
-            title={t.name}
-            aria-label={t.name}
-            aria-pressed={t.id === theme}
-            className={`flex h-8 w-8 items-center justify-center rounded-full border transition-transform hover:scale-110 ${
-              t.id === theme ? "border-white" : "border-transparent"
-            }`}
-            style={{
-              backgroundColor: t.color,
-              boxShadow:
-                t.id === "light"
-                  ? "inset 0 0 0 1px rgba(15,23,42,0.25)"
-                  : undefined,
-            }}
+            onClick={() => apply(t.id, m)}
+            title={`${m === "dark" ? darkLabel : lightLabel} ${t.name}`}
+            aria-label={`${m === "dark" ? darkLabel : lightLabel} ${t.name}`}
+            aria-pressed={m === mode && t.id === color}
+            className={swatchClass(m === mode && t.id === color, m === "light")}
+            style={{ backgroundColor: t.color }}
           >
-            {t.id === theme && (
+            {m === mode && t.id === color && (
               <svg
                 width="12"
                 height="12"
@@ -91,6 +106,15 @@ export default function ThemeSwitcher({
           </button>
         ))}
       </div>
+    </div>
+  );
+
+  if (compact) {
+    return (
+      <div className="w-full" role="group" aria-label={label}>
+        {modeRow("dark", darkLabel)}
+        {modeRow("light", lightLabel)}
+      </div>
     );
   }
 
@@ -109,12 +133,14 @@ export default function ThemeSwitcher({
           style={{
             backgroundColor: current.color,
             boxShadow:
-              current.id === "light"
+              mode === "light"
                 ? "inset 0 0 0 1px rgba(15,23,42,0.25)"
                 : undefined,
           }}
         />
-        <span className="hidden xl:inline">{current.name}</span>
+        <span className="hidden xl:inline">
+          {current.name}
+        </span>
         <svg
           width="12"
           height="12"
@@ -133,50 +159,13 @@ export default function ThemeSwitcher({
         </svg>
       </button>
       {open && (
-        <div className="absolute right-0 top-full mt-2 w-56 overflow-hidden rounded-2xl border border-white/10 bg-ink-800/95 shadow-card backdrop-blur-xl">
+        <div className="absolute right-0 top-full mt-2 w-64 overflow-hidden rounded-2xl border border-white/10 bg-ink-800/95 shadow-card backdrop-blur-xl">
           <p className="px-4 pb-1 pt-3 text-xs font-semibold uppercase tracking-wider text-surface/50">
             {label}
           </p>
-          <div className="grid grid-cols-4 gap-2 p-3">
-            {themes.map((t) => (
-              <button
-                key={t.id}
-                type="button"
-                onClick={() => apply(t.id)}
-                title={t.name}
-                aria-label={t.name}
-                aria-pressed={t.id === theme}
-                className={`flex h-10 w-full items-center justify-center rounded-full border-2 transition-transform hover:scale-110 ${
-                  t.id === theme ? "border-white" : "border-transparent"
-                }`}
-                style={{
-                  backgroundColor: t.color,
-                  boxShadow:
-                    t.id === "light"
-                      ? "inset 0 0 0 1px rgba(15,23,42,0.25)"
-                      : undefined,
-                }}
-              >
-                {t.id === theme && (
-                  <svg
-                    width="14"
-                    height="14"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    aria-hidden="true"
-                  >
-                    <path
-                      d="M5 13l4 4L19 7"
-                      stroke="white"
-                      strokeWidth="3"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                )}
-              </button>
-            ))}
-          </div>
+          {modeRow("dark", darkLabel)}
+          <div className="mx-4 h-px bg-white/10" />
+          {modeRow("light", lightLabel)}
         </div>
       )}
     </div>

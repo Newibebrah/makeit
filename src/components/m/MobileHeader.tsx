@@ -74,7 +74,11 @@ export default function MobileHeader({ lang, dict }: MobileHeaderProps) {
             >
               {dict.nav.getStarted}
             </Link>
-            <ThemeSwitcher label={dict.themeSwitcher.label} />
+            <ThemeSwitcher
+              label={dict.themeSwitcher.label}
+              darkLabel={dict.themeSwitcher.dark}
+              lightLabel={dict.themeSwitcher.light}
+            />
             <LangSwitcher lang={lang} label={dict.langSwitcher.label} />
             <button
               onClick={() => setOpen(!open)}
@@ -138,7 +142,12 @@ export default function MobileHeader({ lang, dict }: MobileHeaderProps) {
                 lang={lang}
                 label={dict.langSwitcher.label}
               />
-              <ThemeSwitcher compact label={dict.themeSwitcher.label} />
+              <ThemeSwitcher
+                compact
+                label={dict.themeSwitcher.label}
+                darkLabel={dict.themeSwitcher.dark}
+                lightLabel={dict.themeSwitcher.light}
+              />
             </div>
           </motion.div>
         )}

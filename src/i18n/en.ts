@@ -17,7 +17,7 @@ const en = {
     getStarted: "Get Started",
   },
   langSwitcher: { label: "Language" },
-  themeSwitcher: { label: "Theme" },
+  themeSwitcher: { label: "Theme", dark: "Dark", light: "Light" },
   hero: {
     badge: "Premium Web Development",
     title1: "Build Your Global Presence",
